@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block body %}
+
+<!--contact us page-->
+<div class="container-fluid p-0 position-relative text-center">
+  <!-- Image with overlay -->
+  <img src="https://images.unsplash.com/photo-1542690969-5a2050285637?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+       class="img-fluid w-100" alt="Centered Image">
+
+  <!-- Overlay content -->
+  <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+    <h3 class="fw-bold display-6">CONTACT</h3>
+
+    <form class="mt-3">
+      <div class="mb-2">
+        <input class="form-control" type="text" placeholder="Enter your contact details" style="max-width: 300px; margin: 0 auto;">
+      </div>
+      <div>
+        <input type="submit" class="btn btn-light px-4" value="SUBMIT">
+      </div>
+    </form>
+</div>
+
+<!-- Bootstrap CDN (include in <head> if not already added) -->
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="card p-4 shadow-lg" style="max-width: 500px; width: 100%; background-color: rgba(7, 4, 28, 0.6); border-radius: 25px;  box-shadow: 10px 10px 8px 10pxrgb(0, 0, 0); background: rgba(14, 31, 72, 0.47);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);">
+    
+  <div class="container mb-3 py-4">
+  <h1 class="text-center " style="color:#ffffff;">Contact Us</h1>
+  <form method="post" action="/contact/">
+    {% csrf_token %}
+    
+    <div class="form-group mb-3">
+      <label for="name"  style="color:#ffffff;">name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+    </div>
+    
+    
+    
+    <div class="form-group mb-3">
+      <label for="phone"  style="color:#ffffff;">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+    </div>
+    
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock body %}
+
+
+
+{% block title %}contact{% endblock title %}
